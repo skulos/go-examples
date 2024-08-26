@@ -1,9 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
 func main() {
-	var variable1 int = -100 // 0 1 2 3 4 5
+	var variable1 int = -100 // -2 -1 0 1 2 3 4 5
 
 	var variable2 string = "I love New York" // "abc" ""
 
@@ -11,10 +14,13 @@ func main() {
 
 	var variable4 bool = true // true false
 
+	var variable5 uint = 123145 // 0 1 2 3 4 ...
+
 	fmt.Println(variable1)
 	fmt.Println(variable4)
 	fmt.Println(variable3)
 	fmt.Println(variable2)
+	fmt.Println(variable5)
 
 	// var newVariable int = 100
 	// newVariable := 100
@@ -28,4 +34,12 @@ func main() {
 	// a = 1
 	// b = 1
 	// c = 1
+
+	//========================================================
+	var randomInt int = rand.Int()
+
+	fmt.Println(randomInt)
+
+	var isEven bool = randomInt.Even() // false
+
 }

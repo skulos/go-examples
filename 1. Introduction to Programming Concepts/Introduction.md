@@ -10,6 +10,11 @@ Programming is the process of writing instructions that a computer can follow to
 - **Programming Language:** A formal language used to write programs. Examples include Go, Python, Java, etc.
 - **Compiler vs. Interpreter:** Go is a compiled language, meaning the code you write is converted into machine code before it can run, making it faster than interpreted languages.
 
+```go
+package main
+
+func main() {}
+```
 
 ### 1.2 Writing Your First Go Program
 ---
@@ -37,7 +42,7 @@ func main() {
 
 - **`go run main.go`**: This command compiles and runs the Go program in a single step.
   
-- **`go build main.go`**: This command compiles the program and generates an executable file that you can run later.
+- **`go build -o main.exe main.go`**: This command compiles the program and generates an executable file that you can run later.
 
 #### Exercise:
 
