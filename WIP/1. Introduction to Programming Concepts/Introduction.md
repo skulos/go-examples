@@ -200,7 +200,7 @@ area = l x b
 ```
   
  
-2. Calculate the Perimeter of a Rectangle
+2. Calculate the Perimeter of a Rectangle (PROG3)
 ```go
 perimeter = 2 x (length + width)
 ```
@@ -218,10 +218,10 @@ Simple Interest = (Principal x Rate x Time) / 100
 ```
    
    
-5. Calculate the Hypotenuse of a Triangle
+5. Calculate the Hypotenuse of a Triangle (PROG 2)
 ```go
 hypotenuse = sqrt(a^2 + b^2)   
 ```
    
    
-6. Determine Even or Odd Number
+6. Determine Even or Odd Number (PROG 1)
