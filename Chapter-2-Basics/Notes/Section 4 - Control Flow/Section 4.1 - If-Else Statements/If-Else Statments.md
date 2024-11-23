@@ -1,0 +1,288 @@
+[← Previous Section - Operations](../Section%204%20-%20Control%20Flow.md)
+
+
+# Section 4.1 - If-Else Statements
+
+Control flow is a fundamental concept in programming, enabling a program to make decisions about certain code that should run or not.
+
+A example would be a special. If you spend more than 500, you get free delivery. What we have here is a choice that the program needs to make when it comes to determining if someone needs to pay delivery.
+Does the total spending add up to 500 or not? If it does, we need to do something - apply free delivery. If the total spending is less than 500, we add delivery fees.
+
+Notice how we use `if`, in programming we use the same [keyword](../../../../Resources/KEYWORDS.md) to represent a simple `true` or `false` choice called a `condition`.
+
+
+### What is an If Statement?
+---
+
+An `if statement` allows a program to make decisions. It checks a condition and executes one block of code if the condition is true and skips over the block if the condition is false.
+
+Here’s a simple visual representation:
+
+```
+if (condition is true):  
+    Execute this block 
+```
+
+In Golang, the syntax is similar but more concise. Below is the basic structure of an if statement in Golang:
+
+```go
+if condition {
+    // Code to execute if the condition is true
+}
+```
+
+You can also think of this as
+
+```go
+if true {
+    // statements here will always run
+}
+```
+
+##### Examples
+Case 1: Total spending is greater than 500
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    totalSpending := 650
+    deliveryFee := 0
+
+    if totalSpending > 500 {
+        deliveryFee = -250 // deliveryFee = -250
+    }
+
+    deliveryFee = deliveryFee + 250 // deliveryFee = 0
+
+}
+```
+
+Case 2: Total spending is less than 500
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    totalSpending := 439
+    deliveryFee := 0
+
+    if totalSpending > 500 {
+        deliveryFee = -250 // This block doesn't run
+    }
+
+    deliveryFee = deliveryFee + 250 // deliveryFee = 250
+
+}
+```
+
+Notice how the code inside the if block only runs if the condition is true. Otherwise, it’s skipped.
+
+### Boolean Conditions
+
+Golang uses (which evaluate to `true` or `false`) to determine the outcome of conditional statements like `if`, `else`, `switch` and loops. These expressions often involve:  
+
+- **Relational Operators**: Compare two values. (e.g., ==, !=, <, >)  
+- **Logical Operators**: Combine or negate boolean expressions. (e.g., &&, ||, !) 
+
+
+#### Relational Operators 
+---
+
+The following relational operators are available:  
+
+| Operator | Description                          | Example              |
+|----------|--------------------------------------|----------------------|
+| `==`     | Equal to                            | `5 == 5` → `true`    |
+| `!=`     | Not equal to                        | `5 != 3` → `true`    |
+| `<`      | Less than                           | `3 < 5` → `true`     |
+| `>`      | Greater than                        | `7 > 2` → `true`     |
+| `<=`     | Less than or equal to               | `4 <= 4` → `true`    |
+| `>=`     | Greater than or equal to            | `6 >= 5` → `true`    |
+
+These operators return a `true` or `false` value based on the comparison.  
+
+
+
+#### Example: Using Relational Operators  
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    a := 10
+    b := 20
+
+    fmt.Println(a == b)  // false
+    fmt.Println(a != b)  // true
+    fmt.Println(a < b)   // true
+    fmt.Println(a > b)   // false
+    fmt.Println(a <= b)  // true
+    fmt.Println(a >= b)  // false
+}
+```
+
+#### Logical Operators
+---
+
+| Operator | Description                                  | Example                          | Result  |
+|----------|----------------------------------------------|----------------------------------|---------|
+| `&&`     | Logical AND (true if both conditions are true) | `(5 > 3) && (4 < 6)`             | `true`  |
+| `\|\|`     | Logical OR (true if at least one condition is true) | `(5 > 10) \|\| (3 < 8)`            | `true`  |
+| `!`      | Logical NOT (inverts the boolean value)     | `!(5 == 5)`                      | `false` |
+
+
+#### Boolean Expressions
+Let’s combine relational and logical operators in a real-world example:
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    accountBalance := 100
+    accountCredit := 200
+
+    if accountBalance + accountCredit > 0 {
+        fmt.Println("You have money to spend.")
+    } else {
+        fmt.Println("You are out of funds.")
+    }
+}
+```
+This program will output the following
+
+```sh
+You have money to spend.
+```
+
+Because the condition `accountBalance + accountCredit > 0` evaluates to `true` since 100 + 200 = 300 is greater than 0.
+
+More complex boolean expressions can be contructed. However, so far we are only checking if a condition is true. How can we handle the case where we want a block of code to execute if a condition is true, or run another block if the condition is false. Introducing `else`, the else statement runs whenever the preceding if statement is false.
+
+Let's take a look at the delivery example again.
+
+##### Examples
+Case 3: Total spending is greater than 500
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    totalSpending := 650
+    deliveryFee := 0
+
+    if totalSpending > 500 {
+        deliveryFee = 0
+    } else {
+        deliveryFee = 250
+    }
+
+    // deliveryFee = 0
+}
+```
+
+Case 4: Total spending is less than 500
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    totalSpending := 439
+    deliveryFee := 0
+
+    if totalSpending > 500 {
+        deliveryFee = 0
+    } else {
+        deliveryFee = 250
+    }
+
+    // deliveryFee = 250
+}
+```
+
+### Else-If Statements
+---
+
+The `else if` statement allows you to check multiple conditions in sequence. It is used when you have more than two possible outcomes and want to evaluate each condition separately.
+
+The structure looks like this:
+
+```go
+if condition1 {
+    // Code to execute if condition1 is true
+} else if condition2 {
+    // Code to execute if condition2 is true
+} else {
+    // Code to execute if neither condition1
+    // nor condition2 is true
+}
+```
+
+In this structure:
+
+- The first if checks `condition1`.
+- If `condition1` is false, the program moves to the next `else if` and checks `condition2`.
+- If `condition2` is also false, the program moves to the `else` block, which is executed when all previous conditions fail.
+
+
+#### Example: Using else if
+
+Let’s consider a scenario where we check if someone is eligible for a discount based on their total spending:
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    totalSpending := 150
+    discount := 0
+
+    if totalSpending > 500 {
+        discount = 20 // 20% discount for spending over 500
+        fmt.Println("You get a 20% discount!")
+    } else if totalSpending > 200 {
+        discount = 10 // 10% discount for spending over 200
+        fmt.Println("You get a 10% discount!")
+    } else {
+        discount = 5 // 5% discount for spending under 200
+        fmt.Println("You get a 5% discount!")
+    }
+
+    // Display the final discount amount
+    fmt.Printf("Your discount is: %d%%\n", discount)
+}
+```
+
+For `totalSpending = 150`:
+```
+You get a 5% discount!
+Your discount is: 5%
+```
+
+For `totalSpending = 350:`
+```
+You get a 10% discount!
+Your discount is: 10%
+```
+
+
+For `totalSpending = 600:`
+```
+You get a 20% discount!
+Your discount is: 20%
+```
+
+[Go to Exercises →](../../../../Chapter-2-Basics/Exercises/section4/section4-1/exercises.go)
