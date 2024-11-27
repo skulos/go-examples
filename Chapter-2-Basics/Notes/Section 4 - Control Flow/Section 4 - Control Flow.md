@@ -48,5 +48,5 @@ In this section, we will explore techniques for repeating code blocks, including
 
 <br>
 
-[Up Next Section 4.1 - If-Else Statements →](Section%204.1%20-%20If-Else%20Statements/If-Else%20Statments.md)
+[Up Next Section 4.1 - If-Else Statements →](Section%204.1%20-%20If-Else%20Statements/4.1%20If-Else%20Statments.md)
 
