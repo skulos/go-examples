@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 02-12-2024
+
+- Added exercises for section 4.2 Switch statements in Chapter 2
+- Also added the tests and updated the makefile
+- Updated [LESSONS](Resources/LESSONS.md) to include the project 1
+
 ## 27-11-2024
 
 - Removed old files from WIP
