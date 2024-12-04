@@ -5,7 +5,12 @@ package exercises
 // as an argument and returns the deliveryFee (either 0 or 250,
 //  depending on whether the spending exceeds 500).
 func ApplyDeliveryFee(totalSpending int) int {
-	return -1
+	if totalSpending < 500 {
+		return 250
+	} else {
+		return 0
+	}
+
 }
 
 // Exercise 2:
@@ -14,26 +19,47 @@ func ApplyDeliveryFee(totalSpending int) int {
 // 	- 10% for over 200, and
 // 	- 5% for less than 200.
 func CalculateDiscount(totalSpending int) int {
-	return -1
+	if totalSpending > 500 {
+		return 20
+	} else if totalSpending > 200 {
+		return 10
+	} else {
+		return 5
+	}
+
 }
 
 // Exercise 3:
 // Write a function CheckEquality that returns "Equal" if two numbers are the same and "Not Equal" otherwise
 func CheckEquality(a, b int) string {
-	return ""
+	if a == b {
+		return "Equal"
+	} else {
+		return "Not Equal"
+	}
 }
 
 // Exercise 4:
 // Write a function CanBuy that returns true if both balance is greater than or equal to cost and
 // age is greater than or equal to 18.
 func CanBuy(balance, cost, age int) bool {
-	return false
+
+	if balance >= cost && age >= 18 {
+		return true
+	} else {
+		return false
+	}
 }
 
 // Exercise 5:
 // Write a function IsEligibleForDiscount that returns true if either membership is "Gold" or totalSpending is greater than 500.
 func IsEligibleForDiscount(membership string, totalSpending int) bool {
-	return false
+
+	if membership == "Gold" || totalSpending > 500 {
+		return true
+	} else {
+		return false
+	}
 }
 
 // Exercise 6:
@@ -42,30 +68,51 @@ func IsEligibleForDiscount(membership string, totalSpending int) bool {
 // 	- "Adult" if age is between 18 and 50.
 //	- "Senior" if age is greater than 60.
 func CheckAge(age int) string {
-	return ""
+	if age < 18 {
+		return "Minor"
+	} else if age <= 60 {
+		return "Adult"
+	} else {
+		return "Senior"
+	}
 }
 
 // Exercise 7:
 // Write a function IsValid that returns true if both age is greater than 18 and country is "RSA"
 func IsValid(age int, country string) bool {
-	return false
+
+	if age > 18 && country == "RSA" {
+		return true
+	} else {
+		return false
+	}
 }
 
 // Exercise 8:
 // Write a function IsBiggerThan100 that returns true if the given number is greater than 100
 func IsBiggerThan100(number int) bool {
-	return false
+	if number > 100 {
+		return true
+	} else {
+		return false
+	}
+
 }
 
 // Exercise 9:
 // Write a function IsNotEqual that checks whether two numbers are not equal and returns true
 // if they are not equal
 func IsNotEqual(a, b int) bool {
-	return false
+	if a != b {
+		return true
+	} else {
+		return false
+	}
+
 }
 
 // Exercise 10:
 // Write a function WithinRange that checks if a number is within a specified range (inclusive).
 func WithinRange(value, min, max int) bool {
-	return false
+	return value >= min && value <= max
 }

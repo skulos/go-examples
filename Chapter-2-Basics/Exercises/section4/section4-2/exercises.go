@@ -10,7 +10,19 @@ package exercises
 // - "Platinum": "30% discount voucher"
 // - Any other value should return "No reward".
 func RewardBasedOnTier(membershipTier string) string {
-	return ""
+
+	switch membershipTier {
+	case "Basic":
+		return "5% discount voucher"
+	case "Silver":
+		return "10% discount voucher"
+	case "Gold":
+		return "20% discount voucher"
+	case "Platinum":
+		return "30% discount voucher"
+	default:
+		return "No reward"
+	}
 }
 
 // Exercise 2:
@@ -19,7 +31,14 @@ func RewardBasedOnTier(membershipTier string) string {
 // - "Saturday" or "Sunday": "It's the weekend!"
 // - Any other day: "It's a weekday."
 func DescribeDay(day string) string {
-	return ""
+	var returnStr string
+	switch day {
+	case "Saturday", "Sunday":
+		returnStr = "It's the weekend!"
+	default:
+		returnStr = "It's a weekday."
+	}
+	return returnStr
 }
 
 // Exercise 3:
@@ -29,7 +48,17 @@ func DescribeDay(day string) string {
 // - 13 to 19: "Teenager"
 // - 20 and above: "Adult"
 func CategorizeAge(age int) string {
-	return ""
+	switch {
+	case age < 13:
+		return "Child"
+	case age >= 13 && age < 20:
+		return "Teenager"
+	case age >= 20:
+		return "Adult"
+	default:
+		return ""
+	}
+
 }
 
 // Exercise 4:
@@ -38,5 +67,6 @@ func CategorizeAge(age int) string {
 // "Weekend" for "Saturday" or "Sunday" and holiday is false,
 // and "Weekday" otherwise.
 func DayType(day string, holiday bool) string {
+
 	return ""
 }
