@@ -25,6 +25,6 @@ the first operation.
 > **Additional Challenge**
 > 
 > - Add the `History` option to the options that can be selected
-> - Call the ``History` functions provided
+> - Call the `History` functions provided
 > - Display the results
 > ---
